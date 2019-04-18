@@ -1,0 +1,106 @@
+body {
+  font-family: "Permanent Marker", cursive, sans-serif;
+  background: whitesmoke;
+  color: black;
+  margin: 20px;
+  background-image: url("https://i.pinimg.com/originals/72/18/e2/7218e261e63e04acc903df31ec88999c.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  font-family: "Permanent Marker", cursive;
+  
+}
+
+header.jumbotron {
+  font-family: "Permanent Marker", cursive;
+  background: black;
+  color: red;
+  border-radius: 12px;
+}
+
+p {
+  font-family: "Permanent Marker", cursive;
+  padding-top: 10px;
+  font-size: 20px;
+  color:red;
+  text-align: center;
+}
+
+
+h1 {
+  font-family: "Permanent Marker", cursive;
+  font-style: bold;
+  text-align: center;
+  position: relative;
+  letter-spacing: 8px;
+  padding: 5px;
+  margin: 5px;
+  margin-top: 5px;
+}
+
+h4 {
+  font-family: "Permanent Marker", cursive;
+  color: rgb(10, 2, 2);
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+#group-affiliations{
+  padding: 5px;
+  margin: 5px;
+}
+
+#relatives{
+  padding: 5px;
+  margin: 5px;
+}
+
+.marvel {
+  background: black;
+  border-radius: 6px;
+  color: white;
+  font-family: "Permanent Marker", cursive;
+  font-size: 15px;
+  padding: 5px;
+  margin: 5px;
+  margin-top: 5px;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  max-width: 960px;
+  padding: 30px;
+  margin: 0 0 40px;
+  align-content: center;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+#superhero-form {
+  padding: 25px;
+
+}
+
+#map-form {
+    padding: 25px;
+}
+
+#description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#add-superhero {
+  color: red;
+}
+
+#add-zipcode {
+    color: red;
+}

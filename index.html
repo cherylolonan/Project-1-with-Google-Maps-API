@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+  <title>Project-1</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/animate.css">
+
+</head>
+
+<body>
+
+  <div class="container"><br>
+    <div id="test"></div>
+    <header class="jumbotron">
+      <h1 class="animated zoomIn">Cerebro</h1>
+    </header>
+  </div>
+  <div class="row">
+    <div class="col-lg-10" id="description">
+      <div class="card" style="border:1px solid rgb(10, 9, 9);">
+        <p>Enter a comic book character's name and receive a synopsis, supplemental information, and local comic book
+          locations.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <form id="superhero-form">
+        <label for="superhero-input"></label>
+        <input id="add-superhero" type="submit" value="Find A Superhero">
+        <input type="text" onfocus="this.value=''" id="superhero-input" placeholder='Enter Character Name'>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <form id="map-form">
+        <label for="zip-code-input"></label>
+        <input id="add-zipcode" type="submit" value="Find A Comic Book Store Near You">
+        <input type="text" id="zip-code-input" placeholder='Enter Zip Code'>
+      </form>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card mt-2">
+        <img class="card-img-top" id="mainimage" src="assets/images/cerebro-main.jpg" alt="Card image cap">
+        <div class="card-body" style="border:1px solid rgb(10, 9, 9);">
+          <p class="card-text" style="color:black">Basic Information</p>
+          <div id="superhero-basic-info"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mt-2" style="border:1px solid rgb(10, 9, 9);">
+        <div class="card-body">
+          Character Attributes
+          <div id="superhero-attributes"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mt-2" style="border:1px solid rgb(10, 9, 9);">
+        <div class="card-body">
+          Powerstats / First Appearance
+          <div id="superhero-powers-first-appearance"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card mt-2" style="border:1px solid rgb(10, 9, 9); width: 18rem;">
+        <div class="card-header">
+          Supplemental Information
+        </div>
+        <ul class="list-group list-group-flush">
+          <div id="group-affiliations"></div>
+          <div id="relatives"></div>
+        </ul>
+      </div>
+    </div>
+    <div>
+    </div>
+    <div class="container" class="col-lg-10">
+      <section class="bottom-section" id="map" frameborder="1" width="100%" height="550"
+        style="border:1px solid black;">
+      </section>
+    </div>
+    <br>
+    <div class="col-md-8">
+      <div class="card mt-2" style="border:1px solid rgb(10, 9, 9);">
+        <p>
+          <med>View <a href="https://batchgeo.com/map/908635c635bb2267a43d357182aa2096">Find a San Diego Comic Book
+              Shop!</a> in a full screen map</med>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD20NIWf6ypY2ycKxgB_pCVUPWYwP8F2Gs&libraries=places&callback=initMap"></script>
+
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>
