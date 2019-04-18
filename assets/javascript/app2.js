@@ -124,50 +124,78 @@ function updateMap(event) {
               map: map,
               position: results[0].geometry.location
           });
-          var queryURL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat + ',' + long}&radius=16000&type=book_store&keyword=comic&key=AIzaSyD20NIWf6ypY2ycKxgB_pCVUPWYwP8F2Gs`;
-          $.ajax({
-              url: queryURL,
-              dataType: 'jsonp',
-              method: "GET"
-          })
-              .then(function (response) {
-                  console.log('PLACES RESULTS!!!', response)
-                  // Storing an array of results in the results variable
-                  var results = response.data;
-
-                  // var store = new google.maps.
-              })
-      } else {
-          console.log("Geocode was not successful for the following reason: " + status);
+      
       }
       var request = {
-          location: map.getCenter(),
-          radius: 20000,
-          types: ['comic','book store']
+        location: map.getCenter(),
+        radius: 16000,
+        types: ['comic book store']
       };
 
       var service = new google.maps.places.PlacesService(map);
 
       function createMarker(result) {
-          var marker = new google.maps.Marker({
-              position: result.geometry.location,
-              map: map,
-              title: 'Comics!'
-          });
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            console.log('got into createMarker')
+            for (var i = 0; i < result.length; i++) {
+                console.log('processing a result', result[i]);
+                var marker = new google.maps.Marker({
+                    position: getCenter(),
+                    map: map,
+                    title: 'Comics!'
+                });
+                console.log('Marker on center', result);
+            }
+        }
+        var marker = new google.maps.Marker({
+            position: getCenter(),
+            map: map,
+            title: 'Comics!'
+        });
+        console.log('Marker on center', result);
       }
 
-      function createMarkers(results, status) {
-          if (status == google.maps.places.PlacesServiceStatus.OK) {
-              console.log('got into if statement')
-              for (var i = 0; i < results.length; i++) {
-                  console.log('processing a result', results[i]);
-                  var place = results[i];
-                  createMarker(results[i]);
-                  console.log('created a marker');
-              }
-          }
-      }
+    function createMarkers(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            console.log('got into if statement')
+            for (var i = 0; i < results.length; i++) {
+                console.log('processing a result', results[i]);
+                var place = results[i];
+                createMarker(results[i]);
+                console.log('created a marker');
+            }
+        }
+    }
 
-      service.nearbySearch(request, createMarkers);
-  });
+    service.nearbySearch(request, createMarkers);
+                var request = {
+                    location: map.getCenter(),
+                    radius: 20000,
+                    types: ['comic','book store']
+                };
+
+                var service = new google.maps.places.PlacesService(map);
+
+                function createMarker(result) {
+                    var marker = new google.maps.Marker({
+                        position: result.geometry.location,
+                        map: map,
+                        title: 'Comics!'
+                    });
+                }
+
+                function createMarkers(results, status) {
+                    if (status == google.maps.places.PlacesServiceStatus.OK) {
+                        console.log('got into if statement')
+                        for (var i = 0; i < results.length; i++) {
+                            console.log('processing a result', results[i]);
+                            var place = results[i];
+                            createMarker(results[i]);
+                            console.log('created a marker');
+                        }
+                    }
+                }
+
+                service.nearbySearch(request, createMarkers);
+            });
 }
